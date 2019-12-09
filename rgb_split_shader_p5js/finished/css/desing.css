@@ -1,0 +1,120 @@
+html,
+body {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    padding: 0;
+    margin: 0;
+    font-family: 'Quicksand', sans-serif;
+    color: #fff;
+}
+* {
+    box-sizing: border-box;
+}
+canvas {
+    position: fixed;
+}
+.holder {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 200;
+}
+.top {
+    display: grid;
+    grid-template-columns: 10% 90%;
+    grid-gap: 10px;
+}
+.top img {
+    padding: 20px;
+    max-width: 110px;
+}
+.top nav {
+    padding: 30px 30px 10px 10px;
+    text-align: right;
+}
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+nav li {
+    text-align: center;
+    display: inline;
+}
+a {
+    text-decoration: none;
+    padding: 10px 10px;
+    color: rgb(98, 148, 157);
+    display: inline-block;
+    width: 120px;
+    border-bottom: 6px solid;
+    border-image: linear-gradient(120deg, rgba(44, 84, 92, 0) 0%, rgba(52, 35, 74, 0) 100%) 1;
+    transition: color 0.5s;
+}
+.active {
+    border-bottom: 6px solid;
+    border-image: linear-gradient(120deg, rgb(76, 125, 134) 0%, rgb(60, 14, 69) 100%) 1;
+}
+a:hover {
+    color: #fff;
+    border-bottom: 6px solid;
+    border-image: linear-gradient(120deg, rgb(76, 125, 134) 0%, rgb(60, 14, 69) 100%) 1;
+}
+.main {
+    display: grid;
+    height: 65vh;
+    text-align: center;
+}
+.strap {
+    align-self: end;
+    opacity: 0.9;
+}
+.strap img {
+    width: 100%;
+    max-width: 30vw;
+}
+.strap p {
+    margin-top: -10px;
+    font-size: 2em;
+}
+.grid {
+    display: grid;
+    margin: 30px 20vh;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 100px;
+    position: relative;
+}
+.panel p {
+    line-height: 1.5;
+}
+.panel h2 {
+    font-size: 2em;
+}
+.panel {
+    position: relative;
+    padding: 10px;
+}
+.panel::before {
+    position: absolute;
+    z-index: -1;
+    content: "";
+    left: 15%;
+    top: 30%;
+    width: 85%;
+    height: 70%;
+    background: linear-gradient(50deg, rgb(27, 60, 66, 1) 0%, rgb(60, 14, 69) 100%);
+}
+.social {
+    position: absolute;
+    width: 500px;
+    top: 40%;
+    left: -18vh;
+    z-index: 900;
+    transform: rotate(-90deg);
+}
+.social ul {
+    display: inline-block;
+}

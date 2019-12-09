@@ -1,0 +1,92 @@
+html,
+body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: 'Montserrat', sans-serif;
+}
+.day-back {
+    background: linear-gradient(0deg, rgb(174, 229, 225) 34%, rgb(111, 174, 219) 100%);
+}
+.rise-back {
+    background: linear-gradient(0deg, rgba(247, 222, 114, 1) 45%, rgba(255, 169, 168, 1) 60%, rgba(78, 147, 146, 1) 80%, rgba(25, 61, 87, 1) 100%);
+}
+.night-back {
+    background: linear-gradient(0deg, rgba(15, 72, 92, 1) 0%, rgba(28, 148, 159, 1) 56%, rgba(24, 57, 86, 1) 100%);
+}
+.container {
+    width: 100%;
+    height: 100%;
+}
+#svg {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+#sun {
+    height: 100px;
+    width: 100px;
+    background-color: #f4f2d5;
+    border-radius: 50%;
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform-origin: 0% 400px;
+    transition: transform 3s ease, background 3s ease;
+    transform: rotate(-70deg);
+}
+.holder {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+}
+.inner {
+    position: relative;
+    width: 50%;
+    margin: 5vh auto;
+    height: 90vh;
+    text-align: center;
+    color: #fff;
+    text-shadow: 0px 2px 5px rgba(0, 0, 0, 0.6);
+}
+.logo {
+    width: 120px;
+    margin-bottom: -30px;
+}
+h2 {
+    font-size: 2em;
+}
+.lower {
+    position: absolute;
+    bottom: 50px;
+    width: 100%;
+}
+input[type=text] {
+    border: none;
+    border-bottom: 1px solid #fff;
+    width: 50%;
+    margin: 20px;
+    color: #fff;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.3em;
+    background: transparent!important;
+}
+input[type=text]:focus {
+    border: 1px solid #fff;
+}
+input[type=button],
+input[type=submit],
+input[type=reset] {
+    background-color: transparent!important;
+    border: 1px solid #fff;
+    border-radius: 3px;
+    color: #fff;
+    padding: 16px 32px;
+    text-decoration: none;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.3em;
+    margin: 4px 2px;
+    cursor: pointer;
+}
