@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>3D Mapping Tutorial .net magaazine</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.3/dist/leaflet.css" />
+    <!--    <script src="https://unpkg.com/leaflet@1.0.3/dist/leaflet.js"></script>-->
+    <script src="https://cdn-webgl.eegeo.com/eegeojs/api/v0.1.780/eegeo.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Serif|Roboto:400,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/design.css" />
+</head>
+
+<body>
+    <header>
+        <div class="logo"><img src="img/logo.svg"></div>
+        <nav>
+            <ul>
+                <li><a href="about.html">About</a></li>
+                <li><a href="portfolio.html">Portfolio</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="master-grid">
+        <div id="map" class="col"></div>
+        <div id="panel" class="col">
+            <h2>Get in touch</h2>
+            <p class="comm"><img src="img/mail.png" class="icon">Please contact us if you have any concerns about attending the conference that are not addressed on the site:</p>
+
+            <form>
+                <div>
+                    <input type="text" id="name" name="name" value="Name">
+                </div>
+                <div>
+                    <input type="text" id="email" name="email" value="Email">
+                </div>
+                <div class="msg">
+                    <textarea cols="20" rows="4" id="msg" name="msg">Message</textarea>
+                    <br>
+                    <input id="submit" type="submit" value="Send">
+                </div>
+            </form>
+            <p class="comm"><img src="img/phone.png" class="icon"><a href="tel:123-456-7890" class="tel"><strong>123-456-7890</strong></a>
+                <br>123 City Street, Marshall City,
+                <br> NY 012345</p>
+        </div>
+    </div>
+    <script>
+        let map = L.eeGeo.map('map', '4232d73d03b3bbb9d7c81ce5c4e33070', {
+            center: [37.784532, -122.400426],
+            zoom: 13
+        });
+
+
+        L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+        }).addTo(map);
+        L.control.zoom({
+            position: 'bottomright'
+        }).addTo(map);
+
+        let marker = L.eeGeo.marker([37.784532, -122.400426]).addTo(map);
+
+        marker.bindPopup("<strong>Create Conference</strong><br> March 21st - 23rd<br>Moscone Center, 747 Howard St,<br> San Francisco, CA 94103");
+
+        //L.eeGeo.themes.time.Dawn, L.eeGeo.themes.time.Day, L.eeGeo.themes.time.Dusk, L.eeGeo.themes.time.Night
+        //map.themes.setTime(L.eeGeo.themes.time.Night);
+        //L.eeGeo.themes.weather.Clear, L.eeGeo.themes.weather.Overcast, L.eeGeo.themes.weather.Rainy, L.eeGeo.themes.weather.Snowy
+        //map.themes.setWeather(L.eeGeo.themes.weather.Snowy);
+        //map.themes.setSeason(L.eeGeo.themes.season.Winter);
+        //        map.themes.setTheme( // L.eeGeo.themes.season.Autumn, // L.eeGeo.themes.time.Night, // L.eeGeo.themes.weather.Snowy // );
+
+        setTimeout(function() {
+            map.setView([37.784532, -122.400426], 16, {
+                headingDegrees: 340.0,
+                tiltDegrees: 10.0
+            });
+        }, 8000);
+
+    </script>
+</body>
+
+</html>

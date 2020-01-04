@@ -1,0 +1,210 @@
+html,
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    line-height: 1.6em;
+    font-family: 'Roboto', sans-serif;
+    color: #777;
+}
+* {
+    box-sizing: border-box;
+}
+header {
+    height: 180px;
+    min-height: 10vh;
+    background: rgb(245, 245, 241);
+    z-index: 2000;
+    border-bottom: 6px solid #79a4c7;
+}
+.logo {
+    margin: 0 auto;
+    padding: 10px 0 0 10px;
+    width: 300px;
+}
+nav {
+    text-align: center;
+}
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 5px 0 0 0;
+    padding: 15px 20px 0 0;
+}
+nav li {
+    text-align: center;
+    display: inline;
+}
+a {
+    text-decoration: none;
+    padding: 10px;
+    color: #3473a8;
+    display: inline-block;
+    font-size: 1em;
+    transition: 0.5s all;
+    text-transform: uppercase;
+    font-family: 'IBM Plex Serif', serif;
+}
+a:hover {
+    color: #79a4c7;
+}
+h2 {
+    margin-top: 0;
+    font-family: 'IBM Plex Serif', serif;
+    color: #3473a8;
+    text-transform: uppercase;
+    font-size: 1.8em;
+}
+.master-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 30px;
+}
+#map {
+    cursor: move;
+    height: 60vh;
+    grid-column-end: span 3;
+}
+#panel {
+    background: rgba(255, 255, 255, 0.95);
+    z-index: 2001;
+    padding: 50px;
+    border-radius: 3px;
+    grid-column-end: span 3;
+}
+.icon {
+    float: left;
+    width: 80px;
+    height: auto;
+    margin: 0 20px 0 0;
+    opacity: 0.5;
+}
+form {
+    clear: left;
+    text-align: center;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 30px;
+}
+.msg {
+    grid-column-end: span 2;
+}
+.comm {
+    margin-top: 30px;
+}
+input[type=text] {
+    border: none;
+    border-bottom: 1px solid #3473a8;
+    width: 100%;
+    margin: 20px 0;
+    color: #3473a8;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.0em;
+    padding: 5px;
+    background: transparent!important;
+}
+input[type=text]:focus {
+    border: 1px solid #3473a8;
+}
+#submit {
+    background-color: transparent!important;
+    border: 1px solid #3473a8;
+    border-radius: 3px;
+    color: #3473a8;
+    padding: 16px 32px;
+    text-decoration: none;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.0em;
+    margin: 0;
+    cursor: pointer;
+}
+#submit:hover {
+    background-color: #3473a8!important;
+    color: #fff;
+}
+#msg {
+    background-color: transparent!important;
+    border: 1px solid #3473a8;
+    border-radius: 3px;
+    color: #3473a8;
+    padding: 8px 12px;
+    text-decoration: none;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.0em;
+    margin: 0 0 20px 0;
+    width: 100%;
+    cursor: pointer;
+}
+.leaflet-popup-content {
+    font-size: 1.3em;
+    color: #3473a8;
+    font-family: 'Roboto', sans-serif;
+}
+.leaflet-control-zoom-in,
+.leaflet-control-zoom-out {
+    padding-left: 7px;
+    padding-top: 0;
+}
+.tel {
+    padding: 0;
+}
+
+/* Medium screens */
+
+@media only screen and (min-width: 601px) {
+    header {
+        height: 100px;
+    }
+    .logo {
+        float: left;
+        margin: 0 0;
+        padding: 20px 0 0 10px;
+        width: 220px;
+    }
+    nav {
+        float: right;
+        text-align: right;
+    }
+    nav ul {
+        list-style-type: none;
+        padding: 0;
+        margin: 20px 20px 0 0;
+    }
+    .master-grid {
+        grid-auto-rows: 1fr;
+        clear: both;
+    }
+}
+
+/*Large desktop screens*/
+
+@media only screen and (min-width: 1025px) {
+    .logo {
+        padding: 10px 0 0 10px;
+        width: 280px;
+    }
+    #panel {
+        padding: 90px 50px 30px;
+        min-height: 90vh;
+        grid-column-end: span 1;
+    }
+    .comm {
+        margin-top: 80px;
+    }
+    form {
+        margin: 90px 0 30px;
+    }
+    #msg {
+        margin: 30px 0 20px 0;
+    }
+    #submit {
+        margin: 30px 0 0 0;
+    }
+    #map {
+        height: auto;
+        grid-column-end: span 2;
+    }
+    nav ul {
+        margin-top: 30px;
+    }
+}
