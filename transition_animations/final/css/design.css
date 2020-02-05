@@ -1,0 +1,187 @@
+* {
+    box-sizing: border-box;
+}
+body {
+    height: 200vh;
+    font-family: 'Playfair Display', serif;
+}
+.wrapper {
+    position: relative;
+    height: 200vh !important;
+    overflow-y: hidden;
+}
+header {
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+    z-index: 200;
+}
+.bg {
+    height: 100vh;
+    background: url(../img/sky.jpg) no-repeat center center;
+    -webkit-background-size: cover;
+    background-size: cover;
+    text-rendering: optimizeLegibility;
+}
+.absolute {
+    position: absolute;
+    width: 100%;
+    height: auto;
+}
+.md {
+    height: 65vh;
+    bottom: 15vw;
+}
+.cov {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: auto;
+    width: 100%;
+    object-fit: cover;
+}
+.md img {
+    max-height: 630px;
+}
+.fr {
+    height: 68vh;
+    bottom: -5vh;
+}
+.fr img {
+    max-height: 754px;
+}
+.coverText {
+    position: absolute;
+    width: 100%;
+    height: auto;
+    bottom: 21vw;
+}
+h2 {
+    padding: 0 0 0 8vw;
+    font-size: 12vw;
+    color: #fff;
+}
+.content {
+    position: relative;
+    color: #fff;
+    height: 100vh;
+    z-index: 100;
+}
+.md2 {
+    height: 60vh;
+    bottom: 5vw;
+}
+.md2 img {
+    max-height: 1022px;
+}
+.coverText2 {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    height: auto;
+    top: 100vh;
+}
+.bg2 {
+    height: 100vh;
+    background: url(../img/sky2.jpg) no-repeat center center;
+    -webkit-background-size: cover;
+    background-size: cover;
+    text-rendering: optimizeLegibility;
+}
+.fr2 {
+    height: 38vh;
+    bottom: -5vh;
+}
+.fr2 img {
+    max-height: 462px;
+}
+.fixedTop {
+    position: fixed;
+    z-index: 2000;
+    padding: 20px;
+    width: 100vw;
+    background: linear-gradient(180deg, rgb(85, 110, 121) 0%, rgba(85, 110, 121, 0) 100%);
+}
+.logo {
+    float: left;
+    width: 200px;
+    color: #fff;
+    padding: 1px 20px;
+    font-size: 1.2em;
+}
+ul li {
+    display: inline;
+}
+.fixedTop ul li a {
+    color: #fff;
+    padding: 10px 20px;
+    font-size: .9em;
+    text-align: center;
+    text-decoration: none;
+    transition: all 0.5s;
+}
+.nav {
+    float: right;
+}
+.fixedTop ul li a:hover {
+    background: #2c2b38;
+    color: #fff;
+}
+h2 {
+    font-family: 'Anton', sans-serif;
+}
+@media only screen and (max-width: 1440px) {
+    .coverText2 {
+        top: 85vw;
+    }
+    md2 img {
+        bottom: 25vh;
+    }
+}
+@media only screen and (max-width: 1024px) {
+    .coverText2 {
+        top: 105vw;
+    }
+}
+@media only screen and (max-width: 768px) {
+    .coverText {
+        bottom: 18vw;
+    }
+    .md2 img {
+        bottom: -20vh;
+    }
+    h2 {
+        font-size: 16vw;
+    }
+    .coverText2 {
+        top: 185vw;
+    }
+}
+
+/* Mobile sized screens */
+
+@media only screen and (max-width: 480px) {
+    .fixedTop {
+        padding-top: 10px;
+    }
+    .fixedTop ul li a {
+        padding: 20px 10px;
+    }
+    .logo {
+        float: none;
+        margin: 0 auto;
+        text-align: center;
+    }
+    .nav {
+        float: none;
+        text-align: center;
+        padding-top: 20px;
+    }
+    .coverText2 {
+        bottom: -10vh;
+    }
+    .md2 img {
+        bottom: -27vh;
+        max-height: 1022px;
+    }
+}

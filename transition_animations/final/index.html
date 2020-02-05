@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Transition Animation States Tutorial</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" href="css/reset.css">
+    <link href="https://fonts.googleapis.com/css?family=Anton|Playfair+Display&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/design.css">
+
+</head>
+
+<body>
+    <div class="fixedTop">
+        <div class="logo">Travelogue</div>
+        <div class="nav">
+            <ul>
+                <li><a href="#rockies">The Rockies</a></li>
+                <li><a href="#valley">Death Valley</a></li>
+                <li><a>Bookings</a></li>
+            </ul>
+        </div>
+    </div>
+    <div id="rockies" class="wrapper">
+        <header>
+            <div class="absolute">
+                <div class="bg rellax" data-rellax-speed="-12"></div>
+            </div>
+            <div class="absolute md">
+                <img class="rellax cov" data-rellax-speed="-8" src="img/background.png">
+            </div>
+            <div class="coverText">
+                <h2 class="rellax" data-rellax-speed="-20">THE ROCKIES</h2>
+            </div>
+            <div class="absolute fr">
+                <img class="cov" src="img/foreground.png">
+            </div>
+        </header>
+
+
+
+        <div id="valley" class="content">
+            <div class="absolute">
+                <div class="bg2 rellax" data-rellax-speed="1"></div>
+            </div>
+            <div class="absolute md2">
+                <img class="rellax cov" data-rellax-speed="-3" data-rellax-percentage="0.5" src="img/background2.png">
+            </div>
+            <div class="coverText2">
+                <h2 class="rellax" data-rellax-speed="7" data-rellax-xs-speed="0" data-rellax-mobile-speed="0">DEATH VALLEY</h2>
+            </div>
+            <div class="absolute fr2">
+                <img class="cov" src="img/foreground2.png">
+            </div>
+
+        </div>
+    </div>
+
+
+    <!-- javascript -->
+    <script type="text/javascript" src="rellax.min.js"></script>
+    <script>
+        var rellax = new Rellax('.rellax', {
+            //center: true,
+            callback: function(position) {
+                // callback every position change
+                //console.log(position);
+            }
+        });
+
+        document.addEventListener('click', function(e) {
+            if (e.target.tagName !== 'A') return;
+            if ((e.target.href && e.target.href.indexOf('#') != -1) && ((e.target.pathname == location.pathname) || ('/' + e.target.pathname == location.pathname)) && (e.target.search == location.search)) {
+                scrollAnchors(e, e.target);
+            }
+        });
+
+        function scrollAnchors(e, respond = null) {
+
+            function distanceToTop(el) {
+                return Math.floor(el.getBoundingClientRect().top);
+            }
+
+            e.preventDefault();
+            var targetID = (respond) ? respond.getAttribute('href') : this.getAttribute('href');
+            var targetAnchor = document.querySelector(targetID);
+            if (!targetAnchor) return;
+            var originalTop = distanceToTop(targetAnchor);
+            window.scrollBy({
+                top: originalTop,
+                left: 0,
+                behavior: 'smooth'
+            });
+            var checkIfDone = setInterval(function() {
+                var atBottom = window.innerHeight + window.pageYOffset >= document.body.offsetHeight - 2;
+                if (distanceToTop(targetAnchor) === 0 || atBottom) {
+                    targetAnchor.tabIndex = '-1';
+                    targetAnchor.focus();
+
+                    if ('history' in window) {
+                        window.history.pushState('', '', targetID);
+                    } else {
+                        window.location = targetID;
+                    }
+
+                    clearInterval(checkIfDone);
+                }
+            }, 100);
+        }
+
+    </script>
+</body>
