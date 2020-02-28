@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.3/dist/leaflet.css" />
     <!--    <script src="https://unpkg.com/leaflet@1.0.3/dist/leaflet.js"></script>-->
-    <script src="https://cdn-webgl.eegeo.com/eegeojs/api/v0.1.780/eegeo.js"></script>
+    <script src="https://cdn-webgl.wrld3d.com/wrldjs/dist/latest/wrld.js"></script>
     <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Serif|Roboto:400,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/design.css" />
 </head>
@@ -48,7 +48,7 @@
         </div>
     </div>
     <script>
-        let map = L.eeGeo.map('map', '4232d73d03b3bbb9d7c81ce5c4e33070', {
+        let map = L.Wrld.map('map', '4232d73d03b3bbb9d7c81ce5c4e33070', {
             center: [37.784532, -122.400426],
             zoom: 13
         });
@@ -61,16 +61,16 @@
             position: 'bottomright'
         }).addTo(map);
 
-        let marker = L.eeGeo.marker([37.784532, -122.400426]).addTo(map);
+        let marker = L.marker([37.784532, -122.400426]).addTo(map);
 
         marker.bindPopup("<strong>Create Conference</strong><br> March 21st - 23rd<br>Moscone Center, 747 Howard St,<br> San Francisco, CA 94103");
 
-        //L.eeGeo.themes.time.Dawn, L.eeGeo.themes.time.Day, L.eeGeo.themes.time.Dusk, L.eeGeo.themes.time.Night
-        //map.themes.setTime(L.eeGeo.themes.time.Night);
-        //L.eeGeo.themes.weather.Clear, L.eeGeo.themes.weather.Overcast, L.eeGeo.themes.weather.Rainy, L.eeGeo.themes.weather.Snowy
-        //map.themes.setWeather(L.eeGeo.themes.weather.Snowy);
-        //map.themes.setSeason(L.eeGeo.themes.season.Winter);
-        //        map.themes.setTheme( // L.eeGeo.themes.season.Autumn, // L.eeGeo.themes.time.Night, // L.eeGeo.themes.weather.Snowy // );
+        //L.Wrld.themes.time.Dawn, L.Wrld.themes.time.Day, L.Wrld.themes.time.Dusk, L.Wrld.themes.time.Night
+        //map.themes.setTime(L.Wrld.themes.time.Night);
+        //L.Wrld.themes.weather.Clear, L.Wrld.themes.weather.Overcast, L.Wrld.themes.weather.Rainy, L.Wrld.themes.weather.Snowy
+        //map.themes.setWeather(L.Wrld.themes.weather.Snowy);
+        //map.themes.setSeason(L.Wrld.themes.season.Winter);
+        //map.themes.setTheme(L.Wrld.themes.season.Autumn, L.Wrld.themes.time.Night, L.Wrld.themes.weather.Snowy);
 
         setTimeout(function() {
             map.setView([37.784532, -122.400426], 16, {
