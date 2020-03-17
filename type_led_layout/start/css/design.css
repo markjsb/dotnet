@@ -1,0 +1,108 @@
+html,
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100vh;
+    background: #aba59d url('../img/bg.jpg') center center fixed;
+    background-size: cover;
+    font-family: 'Ubuntu', sans-serif;
+    line-height: 1.5em;
+    overflow-x: hidden;
+}
+* {
+    box-sizing: border-box;
+}
+section {
+    clear: both;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 10px;
+    padding: 10px 20px 10px 20px;
+    background: rgba(171, 165, 157, 0.6);
+    text-align: center;
+}
+nav {
+    min-height: 10vh;
+    background: rgba(171, 165, 157, 0.6);
+}
+#logo {
+    width: 100px;
+    margin: auto;
+    padding: 10px 0 0 0;
+}
+#navigation {
+    margin: 0 auto;
+    text-align: center;
+    padding: 0 0 5px 0;
+}
+ul {
+    padding: 0;
+}
+ul li {
+    display: inline;
+}
+ul li a {
+    color: #3c352d;
+    padding: 6px 14px;
+    font-size: .9em;
+    text-align: center;
+    text-decoration: none;
+    transition: all 0.5s;
+}
+ul li a:hover {
+    background: #2c261e;
+    color: #fff;
+}
+.title h2 {
+    font-size: 15vw;
+    letter-spacing: -0.05em;
+    padding: 0;
+    margin: 20px 0 50px 0;
+    color: #b262b2;
+    text-shadow: 0px 0px 16px #FFFFFF;
+}
+p {
+    color: #3c352d;
+}
+h3 {
+    color: #2c261e;
+}
+.rmid h3 {
+    border-bottom: 1px solid #2c261e;
+}
+.rot {
+    padding: 10px;
+    background: rgba(178, 98, 178, 0.75);
+}
+.arrow {
+    font-size: 10vw;
+}
+.hot {
+    text-align: right;
+    margin: 20px 0 0 0;
+    padding: 0;
+    color: rgb(178, 98, 178);
+    text-shadow: 0px 0px 8px #FFFFFF;
+}
+.wht {
+    padding: 50px 30px;
+    background: rgba(178, 98, 178, 0.75);
+    color: #fff;
+}
+.multi {
+    color: #3c352d;
+}
+.more {
+    display: none;
+}
+@media (min-width: 1200px) {
+    .multi {
+        column-count: 2;
+        column-gap: 30px;
+        color: #3c352d;
+    }
+    .wht {
+        margin-top: 0;
+    }
+}
