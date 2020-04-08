@@ -1,0 +1,130 @@
+html,
+body {
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    line-height: 1em;
+    font-family: sans-serif;
+}
+* {
+    box-sizing: border-box;
+}
+canvas {
+    position: fixed;
+}
+.page {
+    position: absolute;
+    top 0;
+    left: 0;
+    width: 100%;
+    min-height: 100vh;
+    z-index: 200;
+}
+nav {
+    width: 100%;
+    background: rgba(255, 255, 255, 0.5);
+    text-align: center;
+}
+nav ul {
+    list-style-type: none;
+    padding: 10px;
+    margin: 0 10px 0 0;
+}
+nav li {
+    text-align: center;
+    display: inline;
+}
+a {
+    text-decoration: none;
+    padding: 10px;
+    color: #666;
+    display: inline-block;
+    transition: 0.5s all;
+    font-weight: 600;
+}
+a:hover {
+    color: #5d3c93;
+}
+.cover {
+    display: grid;
+    height: 70vh;
+    justify-content: center;
+    text-align: center;
+}
+.main {
+    align-self: center;
+    justify-self: center;
+    text-shadow: 0px 5px 1vw rgba(0, 0, 0, 0.3);
+    color: #fff;
+}
+.main h1 {
+    font-size: 15vw;
+    letter-spacing: -0.7vw;
+    line-height: 1em;
+    margin: 0;
+}
+.sub {
+    font-size: 6vw;
+    margin: 0;
+    font-weight: 600;
+}
+.content {
+    padding-bottom: 100px;
+    background: #fff;
+    line-height: 1.7em;
+    color: #666;
+}
+.grid {
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-gap: 10px;
+    padding: 10px;
+}
+.col3 {
+    grid-column-end: span 12;
+}
+.col1 {
+    grid-column-end: span 12;
+}
+.col3 img {
+    max-width: 100%;
+}
+.col3 h3 {
+    color: #693877;
+    font-size: 1.8em;
+    margin-top: 60px;
+}
+.panel {
+    padding: 100px 20% 20px;
+    text-align: center;
+}
+.panel h2 {
+    font-size: 2.5em;
+    color: #693877;
+    line-height: 1em;
+}
+footer {
+    height: 250px;
+    background: url(../img/ft-bg.jpg) no-repeat center center;
+    background-size: cover;
+    color: #fff;
+    text-align: center;
+    padding-top: 120px
+}
+@media (min-width: 768px) {
+    .grid {
+        width: 90%;
+        grid-gap: 20px;
+    }
+    .col3 {
+        grid-column-end: span 4;
+    }
+}
+@media (min-width: 992px) {
+    .grid {
+        width: 80%;
+        padding: 100px 0;
+        grid-gap: 80px;
+    }
+}
